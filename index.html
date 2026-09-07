@@ -48,21 +48,22 @@
     .section-title span { color: #0369a1; }
 
     .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px; margin: 20px 0 30px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px; margin: 20px 0 30px;
     }
     .service-card {
       background: white; border-radius: 24px; padding: 30px 20px;
       box-shadow: 0 8px 28px -8px rgba(0,41,66,0.08);
       border: 1px solid rgba(3,105,161,0.08); transition: 0.2s; text-align: center;
+      display: flex; flex-direction: column; align-items: center; justify-content: space-between;
     }
     .service-card:hover { border-color: #0369a1; transform: translateY(-4px); }
     .service-icon { font-size: 2.8rem; margin-bottom: 16px; display: block; }
-    .service-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; color: #0b2b3f; }
-    .service-card p { color: #3d5e73; font-size: 0.95rem; }
+    .service-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; color: #0b2b3f; }
+    .service-card p { color: #3d5e73; font-size: 0.95rem; margin-bottom: 12px; }
     .service-tag {
       display: inline-block; background: #e8f2fa; color: #0369a1;
-      font-size: 0.7rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-top: 10px;
+      font-size: 0.75rem; font-weight: 600; padding: 4px 14px; border-radius: 20px;
     }
 
     .contact-section {
@@ -136,12 +137,95 @@
 
   <h2 class="section-title" id="services">Our <span>Services</span></h2>
   <div class="services-grid">
-    <div class="service-card"><span class="service-icon">🌐</span><h3>Web Development</h3><p>Responsive websites, e-commerce, web apps.</p><span class="service-tag">Full-stack</span></div>
-    <div class="service-card"><span class="service-icon">📱</span><h3>App Development (Android)</h3><p>Native Android apps, modern UI & performance.</p><span class="service-tag">Mobile</span></div>
-    <div class="service-card"><span class="service-icon">✍️</span><h3>AI Content Writing</h3><p>High-quality articles, blogs, copy in minutes.</p><span class="service-tag">Popular</span></div>
-    <div class="service-card"><span class="service-icon">📈</span><h3>SEO Blogs</h3><p>Search-optimized posts that rank & drive traffic.</p><span class="service-tag">Ranking</span></div>
-    <div class="service-card"><span class="service-icon">🎨</span><h3>Canva Designs</h3><p>Social graphics, presentations, brand kits.</p><span class="service-tag">Visual</span></div>
-    <div class="service-card"><span class="service-icon">🖼️</span><h3>YouTube Thumbnails</h3><p>Click-worthy, high-CTR thumbnails.</p><span class="service-tag">CTR Boost</span></div>
+    <div class="service-card">
+      <div>
+        <span class="service-icon">🌐</span>
+        <h3>Web Development</h3>
+        <p>Responsive websites, e-commerce, web apps.</p>
+      </div>
+      <span class="service-tag">Full-stack</span>
+    </div>
+
+    <div class="service-card">
+      <div>
+        <span class="service-icon">📱</span>
+        <h3>App Development (Android)</h3>
+        <p>Native Android apps, modern UI & performance.</p>
+      </div>
+      <span class="service-tag">Mobile</span>
+    </div>
+
+    <div class="service-card">
+      <div>
+        <span class="service-icon">✍️</span>
+        <h3>AI Content Writing</h3>
+        <p>High-quality articles, blogs, copy in minutes.</p>
+      </div>
+      <span class="service-tag">Popular</span>
+    </div>
+
+    <div class="service-card">
+      <div>
+        <span class="service-icon">📈</span>
+        <h3>SEO Blogs</h3>
+        <p>Search-optimized posts that rank & drive traffic.</p>
+      </div>
+      <span class="service-tag">Ranking</span>
+    </div>
+
+    <div class="service-card">
+      <div>
+        <span class="service-icon">🎨</span>
+        <h3>Canva Designs</h3>
+        <p>Social graphics, presentations, brand kits.</p>
+      </div>
+      <span class="service-tag">Visual</span>
+    </div>
+
+    <div class="service-card">
+      <div>
+        <span class="service-icon">🖼️</span>
+        <h3>YouTube Thumbnails</h3>
+        <p>Click-worthy, high-CTR thumbnails.</p>
+      </div>
+      <span class="service-tag">CTR Boost</span>
+    </div>
+
+    <div class="service-card">
+      <div>
+        <span class="service-icon">📝</span>
+        <h3>Script Writing</h3>
+        <p>Video scripts, ads, podcasts, YouTube scripts.</p>
+      </div>
+      <span class="service-tag">Storytelling</span>
+    </div>
+
+    <div class="service-card">
+      <div>
+        <span class="service-icon">📊</span>
+        <h3>Social Media Management</h3>
+        <p>Content planning, posting, engagement strategy.</p>
+      </div>
+      <span class="service-tag">Growth</span>
+    </div>
+
+    <div class="service-card">
+      <div>
+        <span class="service-icon">🎯</span>
+        <h3>Digital Marketing</h3>
+        <p>SEO, ads, email marketing, funnel strategy.</p>
+      </div>
+      <span class="service-tag">Conversion</span>
+    </div>
+
+    <div class="service-card">
+      <div>
+        <span class="service-icon">🚀</span>
+        <h3>Consulting & Strategy</h3>
+        <p>Business growth, automation, tech strategy.</p>
+      </div>
+      <span class="service-tag">Scale</span>
+    </div>
   </div>
 
   <div class="contact-section" id="contact">
@@ -189,7 +273,7 @@
     if (isMobile) {
       window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     } else {
-      window.open(`https://mail.google.com/mail/u/0/?tf=cm&target=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
+      window.open(`https://mail.google.com/mail/u/0/?tf=cm&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
     }
   }
 
