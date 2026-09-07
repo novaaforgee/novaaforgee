@@ -25,11 +25,10 @@
     .logo span { color: #0b2b3f; font-weight: 300; }
     .nav-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
     
-    /* buttons */
     .btn-whatsapp, .btn-email, .btn-primary {
       border: none; padding: 10px 24px; border-radius: 40px; font-weight: 600;
       font-size: 1rem; transition: 0.2s; text-decoration: none; display: inline-flex;
-      align-items: center; gap: 8px; box-shadow: 0 8px 18px -6px rgba(0,0,0,0.08);
+      align-items: center; gap: 8px; box-shadow: 0 8px 18px -6px rgba(0,0,0,0.08); cursor: pointer;
     }
     .btn-whatsapp { background: #25D366; color: white; box-shadow: 0 8px 18px -6px rgba(37,211,102,0.4); }
     .btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); }
@@ -66,19 +65,6 @@
       font-size: 0.7rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-top: 10px;
     }
 
-    .testimonials-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 28px; margin: 30px 0 20px;
-    }
-    .testimonial-card {
-      background: white; padding: 28px 24px; border-radius: 28px;
-      box-shadow: 0 4px 16px rgba(0,41,66,0.04); border: 1px solid #e3edf5;
-    }
-    .testimonial-card p { font-size: 1rem; font-style: italic; color: #1b3e53; margin-bottom: 14px; }
-    .testimonial-card .author { font-weight: 600; color: #0b2b3f; }
-    .testimonial-card .role { font-size: 0.85rem; color: #3d5e73; }
-    .stars { color: #f5b342; letter-spacing: 2px; font-size: 1.1rem; }
-
     .contact-section {
       background: white; border-radius: 40px; padding: 50px 30px;
       margin: 60px 0 40px; box-shadow: 0 8px 30px -12px rgba(0,41,66,0.08);
@@ -95,11 +81,10 @@
       border-radius: 60px; box-shadow: 0 8px 28px rgba(37,211,102,0.4);
       text-decoration: none; font-weight: 600; display: flex;
       align-items: center; gap: 10px; font-size: 1rem; z-index: 1000;
-      transition: 0.25s;
+      transition: 0.25s; cursor: pointer;
     }
     .email-float { right: 120px; background: #1a73e8; box-shadow: 0 8px 28px rgba(26,115,232,0.4); }
-    .whatsapp-float:hover { transform: scale(1.05); }
-    .email-float:hover { transform: scale(1.05); }
+    .whatsapp-float:hover, .email-float:hover { transform: scale(1.05); }
     .whatsapp-float svg, .email-float svg { width: 26px; height: 26px; fill: white; }
 
     .footer { text-align: center; padding: 40px 0 30px; color: #3d5e73; border-top: 1px solid #dceaf3; margin-top: 20px; font-size: 0.95rem; }
@@ -120,14 +105,13 @@
 <div class="container">
 
   <header class="navbar">
-    <!-- company name: NovaaForgee -->
     <div class="logo">Novaa<span>Forgee</span></div>
     <div class="nav-actions">
       <a href="https://wa.me/639553021330?text=Hi!%20I%20want%20to%20know%20about%20your%20services." target="_blank" class="btn-whatsapp">
         <svg viewBox="0 0 24 24"><path d="M12.032 21.965c-1.917 0-3.78-.541-5.356-1.562l-5.218 1.709 1.748-5.08c-1.112-1.664-1.698-3.604-1.698-5.625 0-5.926 4.822-10.747 10.747-10.747s10.747 4.821 10.747 10.747c0 5.925-4.822 10.747-10.747 10.747zm0-19.862c-5.028 0-9.118 4.09-9.118 9.118 0 1.93.602 3.813 1.74 5.376l-1.151 3.345 3.445-1.127c1.488.834 3.203 1.283 5.084 1.283 5.028 0 9.118-4.09 9.118-9.118s-4.09-9.118-9.118-9.118zm5.541 11.453c-.075-.125-.274-.199-.572-.349-.298-.15-1.762-.869-2.035-.969-.272-.1-.471-.15-.669.149-.198.299-.768.969-.941 1.168-.174.199-.348.224-.646.075-.298-.15-1.259-.464-2.398-1.48-.887-.79-1.485-1.768-1.659-2.067-.174-.299-.019-.46.131-.609.134-.134.298-.349.447-.523.149-.174.199-.299.298-.498.1-.2.05-.374-.025-.524-.074-.15-.669-1.613-.917-2.208-.242-.58-.488-.485-.669-.494-.174-.01-.373-.01-.572-.01-.199 0-.523.075-.797.374-.273.299-1.042 1.018-1.042 2.482s1.067 2.88 1.216 3.078c.149.199 2.099 3.205 5.087 4.297.71.26 1.264.416 1.696.533.713.227 1.362.195 1.876.118.571-.086 1.762-.72 2.009-1.416.248-.696.248-1.292.174-1.416z"/></svg>
         <span>WhatsApp</span>
       </a>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=novaaforgee@gmail.com&su=Project%20Inquiry&body=Hi%20NovaaForgee,%20I%20have%20a%20project%20in%20mind..." target="_blank" class="btn-email">
+      <a href="javascript:void(0);" onclick="openEmail()" class="btn-email">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         <span>Email</span>
       </a>
@@ -143,14 +127,13 @@
         <svg viewBox="0 0 24 24" style="width:24px;height:24px;fill:white;"><path d="M12.032 21.965c-1.917 0-3.78-.541-5.356-1.562l-5.218 1.709 1.748-5.08c-1.112-1.664-1.698-3.604-1.698-5.625 0-5.926 4.822-10.747 10.747-10.747s10.747 4.821 10.747 10.747c0 5.925-4.822 10.747-10.747 10.747zm0-19.862c-5.028 0-9.118 4.09-9.118 9.118 0 1.93.602 3.813 1.74 5.376l-1.151 3.345 3.445-1.127c1.488.834 3.203 1.283 5.084 1.283 5.028 0 9.118-4.09 9.118-9.118s-4.09-9.118-9.118-9.118zm5.541 11.453c-.075-.125-.274-.199-.572-.349-.298-.15-1.762-.869-2.035-.969-.272-.1-.471-.15-.669.149-.198.299-.768.969-.941 1.168-.174.199-.348.224-.646.075-.298-.15-1.259-.464-2.398-1.48-.887-.79-1.485-1.768-1.659-2.067-.174-.299-.019-.46.131-.609.134-.134.298-.349.447-.523.149-.174.199-.299.298-.498.1-.2.05-.374-.025-.524-.074-.15-.669-1.613-.917-2.208-.242-.58-.488-.485-.669-.494-.174-.01-.373-.01-.572-.01-.199 0-.523.075-.797.374-.273.299-1.042 1.018-1.042 2.482s1.067 2.88 1.216 3.078c.149.199 2.099 3.205 5.087 4.297.71.26 1.264.416 1.696.533.713.227 1.362.195 1.876.118.571-.086 1.762-.72 2.009-1.416.248-.696.248-1.292.174-1.416z"/></svg>
         Chat on WhatsApp
       </a>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=novaaforgee@gmail.com&su=Project%20Inquiry&body=Hi%20NovaaForgee,%20I%20have%20a%20project%20in%20mind..." target="_blank" class="btn-email" style="padding: 12px 40px; font-size: 1.1rem;">
+      <a href="javascript:void(0);" onclick="openEmail()" class="btn-email" style="padding: 12px 40px; font-size: 1.1rem;">
         <svg viewBox="0 0 24 24" fill="currentColor" style="width:24px;height:24px;"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         Email us
       </a>
     </div>
   </section>
 
-  <!-- Services -->
   <h2 class="section-title" id="services">Our <span>Services</span></h2>
   <div class="services-grid">
     <div class="service-card"><span class="service-icon">🌐</span><h3>Web Development</h3><p>Responsive websites, e-commerce, web apps.</p><span class="service-tag">Full-stack</span></div>
@@ -159,21 +142,8 @@
     <div class="service-card"><span class="service-icon">📈</span><h3>SEO Blogs</h3><p>Search-optimized posts that rank & drive traffic.</p><span class="service-tag">Ranking</span></div>
     <div class="service-card"><span class="service-icon">🎨</span><h3>Canva Designs</h3><p>Social graphics, presentations, brand kits.</p><span class="service-tag">Visual</span></div>
     <div class="service-card"><span class="service-icon">🖼️</span><h3>YouTube Thumbnails</h3><p>Click-worthy, high-CTR thumbnails.</p><span class="service-tag">CTR Boost</span></div>
-    <div class="service-card"><span class="service-icon">📝</span><h3>Script Writing</h3><p>Video scripts, ads, podcasts, YouTube scripts.</p><span class="service-tag">Storytelling</span></div>
-    <div class="service-card"><span class="service-icon">📊</span><h3>Social Media Management</h3><p>Content planning, posting, engagement strategy.</p><span class="service-tag">Growth</span></div>
-    <div class="service-card"><span class="service-icon">🎯</span><h3>Digital Marketing</h3><p>SEO, ads, email marketing, funnel strategy.</p><span class="service-tag">Conversion</span></div>
-    <div class="service-card"><span class="service-icon">🚀</span><h3>Consulting & Strategy</h3><p>Business growth, automation, tech consulting.</p><span class="service-tag">Expert</span></div>
-    <div class="service-card"><span class="service-icon">🧠</span><h3>Intelligent Automation</h3><p>Workflow automation, chatbots, smart assistants.</p><span class="service-tag">AI-powered</span></div>
-    <div class="service-card"><span class="service-icon">📋</span><h3>Data Insights & Reports</h3><p>Dashboard creation, data analysis, visual reports.</p><span class="service-tag">Analytics</span></div>
-    <div class="service-card"><span class="service-icon">🎙️</span><h3>Voice / Audio Content</h3><p>Voiceovers, podcast editing, audio branding.</p><span class="service-tag">Audio</span></div>
-    <div class="service-card"><span class="service-icon">⚡</span><h3>Performance Optimization</h3><p>Speed up websites, apps, and digital assets.</p><span class="service-tag">Speed</span></div>
-    <div class="service-card"><span class="service-icon">📧</span><h3>Email Marketing Campaigns</h3><p>Newsletters, drip campaigns, high-conversion emails.</p><span class="service-tag">CRM</span></div>
-    <div class="service-card"><span class="service-icon">🛒</span><h3>E-commerce Solutions</h3><p>Shopify, WooCommerce, payment integrations.</p><span class="service-tag">Store</span></div>
-    <div class="service-card"><span class="service-icon">🔍</span><h3>Market Research</h3><p>Competitor analysis, trend spotting, user surveys.</p><span class="service-tag">Strategy</span></div>
   </div>
 
-
-  <!-- Contact: WhatsApp + Email -->
   <div class="contact-section" id="contact">
     <h2>Let's build <span>something amazing</span></h2>
     <p>Reach out on WhatsApp or email — we'll discuss your project and get started.</p>
@@ -182,7 +152,7 @@
         <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white;"><path d="M12.032 21.965c-1.917 0-3.78-.541-5.356-1.562l-5.218 1.709 1.748-5.08c-1.112-1.664-1.698-3.604-1.698-5.625 0-5.926 4.822-10.747 10.747-10.747s10.747 4.821 10.747 10.747c0 5.925-4.822 10.747-10.747 10.747zm0-19.862c-5.028 0-9.118 4.09-9.118 9.118 0 1.93.602 3.813 1.74 5.376l-1.151 3.345 3.445-1.127c1.488.834 3.203 1.283 5.084 1.283 5.028 0 9.118-4.09 9.118-9.118s-4.09-9.118-9.118-9.118zm5.541 11.453c-.075-.125-.274-.199-.572-.349-.298-.15-1.762-.869-2.035-.969-.272-.1-.471-.15-.669.149-.198.299-.768.969-.941 1.168-.174.199-.348.224-.646.075-.298-.15-1.259-.464-2.398-1.48-.887-.79-1.485-1.768-1.659-2.067-.174-.299-.019-.46.131-.609.134-.134.298-.349.447-.523.149-.174.199-.299.298-.498.1-.2.05-.374-.025-.524-.074-.15-.669-1.613-.917-2.208-.242-.58-.488-.485-.669-.494-.174-.01-.373-.01-.572-.01-.199 0-.523.075-.797.374-.273.299-1.042 1.018-1.042 2.482s1.067 2.88 1.216 3.078c.149.199 2.099 3.205 5.087 4.297.71.26 1.264.416 1.696.533.713.227 1.362.195 1.876.118.571-.086 1.762-.72 2.009-1.416.248-.696.248-1.292.174-1.416z"/></svg>
         Start on WhatsApp
       </a>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=novaaforgee@gmail.com&su=Project%20Inquiry&body=Hi%20NovaaForgee,%20I%20have%20a%20project%20in%20mind..." target="_blank" class="btn-email" style="padding: 16px 48px; font-size: 1.2rem;">
+      <a href="javascript:void(0);" onclick="openEmail()" class="btn-email" style="padding: 16px 48px; font-size: 1.2rem;">
         <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px;height:28px;"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         Send Email
       </a>
@@ -190,27 +160,39 @@
   </div>
 
   <footer class="footer">
-    <!-- company name updated -->
     <p>© 2026 NovaaForgee · Web · App · Content · Design · Marketing</p>
     <p style="margin-top: 6px; font-size: 0.85rem; opacity: 0.8;">
       <a href="https://wa.me/639553021330" target="_blank" style="color:#25D366; font-weight:600;">💬 WhatsApp</a> &nbsp;·&nbsp;
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=novaaforgee@gmail.com&su=Project%20Inquiry&body=Hi%20NovaaForgee,%20I%20have%20a%20project%20in%20mind..." target="_blank" style="color:#1a73e8; font-weight:600;">✉️ Email</a>
+      <a href="javascript:void(0);" onclick="openEmail()" style="color:#1a73e8; font-weight:600;">✉️ Email</a>
     </p>
   </footer>
 </div>
 
-<!-- Floating WhatsApp + Email -->
 <a href="https://wa.me/639553021330?text=Hi!%20I%20want%20to%20know%20more%20about%20your%20services." target="_blank" class="whatsapp-float">
   <svg viewBox="0 0 24 24"><path d="M12.032 21.965c-1.917 0-3.78-.541-5.356-1.562l-5.218 1.709 1.748-5.08c-1.112-1.664-1.698-3.604-1.698-5.625 0-5.926 4.822-10.747 10.747-10.747s10.747 4.821 10.747 10.747c0 5.925-4.822 10.747-10.747 10.747zm0-19.862c-5.028 0-9.118 4.09-9.118 9.118 0 1.93.602 3.813 1.74 5.376l-1.151 3.345 3.445-1.127c1.488.834 3.203 1.283 5.084 1.283 5.028 0 9.118-4.09 9.118-9.118s-4.09-9.118-9.118-9.118zm5.541 11.453c-.075-.125-.274-.199-.572-.349-.298-.15-1.762-.869-2.035-.969-.272-.1-.471-.15-.669.149-.198.299-.768.969-.941 1.168-.174.199-.348.224-.646.075-.298-.15-1.259-.464-2.398-1.48-.887-.79-1.485-1.768-1.659-2.067-.174-.299-.019-.46.131-.609.134-.134.298-.349.447-.523.149-.174.199-.299.298-.498.1-.2.05-.374-.025-.524-.074-.15-.669-1.613-.917-2.208-.242-.58-.488-.485-.669-.494-.174-.01-.373-.01-.572-.01-.199 0-.523.075-.797.374-.273.299-1.042 1.018-1.042 2.482s1.067 2.88 1.216 3.078c.149.199 2.099 3.205 5.087 4.297.71.26 1.264.416 1.696.533.713.227 1.362.195 1.876.118.571-.086 1.762-.72 2.009-1.416.248-.696.248-1.292.174-1.416z"/></svg>
   <span>Chat</span>
 </a>
 
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=novaaforgee@gmail.com&su=Project%20Inquiry&body=Hi%20NovaaForgee,%20I%20have%20a%20project%20in%20mind..." target="_blank" class="email-float">
+<a href="javascript:void(0);" onclick="openEmail()" class="email-float">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
   <span>Email</span>
 </a>
 
 <script>
+  function openEmail() {
+    const email = "novaaforgee@gmail.com";
+    const subject = "Project Inquiry";
+    const body = "Hi NovaaForgee, I have a project in mind...";
+    
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    } else {
+      window.open(`https://mail.google.com/mail/u/0/?tf=cm&target=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
+    }
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
